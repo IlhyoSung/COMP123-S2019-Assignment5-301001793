@@ -8,6 +8,10 @@ namespace COMP123_S2019_Assignment5_301001793
 {
     static class Program
     {
+        public static SplashScreen splashScreen;
+        public static StartForm startForm;
+        public static SelectForm selectForm;
+        public static ProductInfoForm productInfoForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +20,13 @@ namespace COMP123_S2019_Assignment5_301001793
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            splashScreen = new SplashScreen();
+            startForm = new StartForm();
+            selectForm = new SelectForm();
+            productInfoForm = new ProductInfoForm();
+
+            Application.Run(splashScreen);
         }
     }
 }
