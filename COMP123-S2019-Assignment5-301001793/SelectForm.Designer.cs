@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.HardwareSelectionLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // HardwareSelectionLabel
+            // 
+            this.HardwareSelectionLabel.AutoSize = true;
+            this.HardwareSelectionLabel.Location = new System.Drawing.Point(13, 13);
+            this.HardwareSelectionLabel.Name = "HardwareSelectionLabel";
+            this.HardwareSelectionLabel.Size = new System.Drawing.Size(147, 13);
+            this.HardwareSelectionLabel.TabIndex = 0;
+            this.HardwareSelectionLabel.Text = "DollarComputer Hardware List";
+            // 
+            // SelectForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HardwareSelectionLabel);
+            this.Name = "SelectForm";
             this.Text = "SelectForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label HardwareSelectionLabel;
     }
 }
