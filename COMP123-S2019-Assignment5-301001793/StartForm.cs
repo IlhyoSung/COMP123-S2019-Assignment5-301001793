@@ -19,14 +19,14 @@ namespace COMP123_S2019_Assignment5_301001793
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            Program.startForm.Hide();
-            Program.selectForm.Show();
+            Program.Forms[FormName.SELECT_FORM].Show();
+            this.Hide();
         }
 
         private void LoadButton_Click(object sender, EventArgs e)
         {
-            Program.startForm.Hide();
-            Program.productInfoForm.Show();
+            Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
+            this.Hide();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

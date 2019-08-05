@@ -25,8 +25,8 @@ namespace COMP123_S2019_Assignment5_301001793
         private void SplashTimer_Tick(object sender, EventArgs e)
         {
             SplashTimer.Enabled = false;
-            Program.startForm.Show();
-            Program.splashScreen.Hide();
+            Program.Forms[FormName.START_FORM].Show();
+            this.Hide();
         }
     }
 }

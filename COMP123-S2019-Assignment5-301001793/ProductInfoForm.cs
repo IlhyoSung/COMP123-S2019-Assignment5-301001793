@@ -16,5 +16,22 @@ namespace COMP123_S2019_Assignment5_301001793
         {
             InitializeComponent();
         }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.ORDER_FORM].Show();
+            this.Hide();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void SelectButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.SELECT_FORM].Show();
+            this.Hide();
+        }
     }
 }

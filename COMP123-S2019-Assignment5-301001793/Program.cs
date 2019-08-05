@@ -8,10 +8,8 @@ namespace COMP123_S2019_Assignment5_301001793
 {
     static class Program
     {
-        public static SplashScreen splashScreen;
-        public static StartForm startForm;
-        public static SelectForm selectForm;
-        public static ProductInfoForm productInfoForm;
+        public static Dictionary<FormName, Form> Forms;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,12 +19,15 @@ namespace COMP123_S2019_Assignment5_301001793
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            splashScreen = new SplashScreen();
-            startForm = new StartForm();
-            selectForm = new SelectForm();
-            productInfoForm = new ProductInfoForm();
+            Forms = new Dictionary<FormName, Form>();
+            Forms.Add(FormName.SPLASH_SCREEN, new SplashScreen());
+            Forms.Add(FormName.START_FORM, new StartForm());
+            Forms.Add(FormName.SELECT_FORM, new SelectForm());
+            Forms.Add(FormName.PRODUCT_INFO_FORM, new ProductInfoForm());
+            Forms.Add(FormName.ORDER_FORM, new OrderForm());
 
-            Application.Run(splashScreen);
+
+            Application.Run(Forms[FormName.SPLASH_SCREEN]);
         }
     }
 }
