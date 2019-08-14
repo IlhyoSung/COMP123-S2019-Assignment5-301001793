@@ -47,7 +47,7 @@ namespace COMP123_S2019_Assignment5_301001793.Models
         public short productID { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? cost { get; set; }
+        public decimal cost { get; set; }
 
         [StringLength(255)]
         public string manufacturer { get; set; }

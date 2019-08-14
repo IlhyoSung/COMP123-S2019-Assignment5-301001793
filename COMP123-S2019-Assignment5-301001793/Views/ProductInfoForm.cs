@@ -177,10 +177,151 @@ namespace COMP123_S2019_Assignment5_301001793.Views
                 {
                     Debug.WriteLine("ERROR: " + exception.Message);
 
-                    MessageBox.Show("ERROR" + exception.Message, "ERROR",
+                    MessageBox.Show("ERROR: " + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException exception)
+                {
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR: " + exception.Message + "\n\nPlease select the text file type.", "ERROR",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }            
+        }
+
+        private void OpenBinaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // configure the file dialog
+            ProductOpenFileDialog.FileName = "Product.dat";
+            ProductOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            ProductOpenFileDialog.Filter = "Binary Files (*.dat)|*.dat| All Files (*.*)|*.*";
+
+            // open the file dialog
+            var result = ProductOpenFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                try
+                {
+                    // open file stream to read
+                    using (BinaryReader inputStream = new BinaryReader(
+                        File.Open(ProductOpenFileDialog.FileName, FileMode.Open)))
+                    {
+                        // read stuff from the file into the Product object
+                        Program.product.productID = short.Parse(inputStream.ReadString());
+                        Program.product.cost = decimal.Parse(inputStream.ReadString());
+                        Program.product.manufacturer = inputStream.ReadString();
+                        Program.product.model = inputStream.ReadString();
+                        Program.product.RAM_type = inputStream.ReadString();
+                        Program.product.RAM_size = inputStream.ReadString();
+                        Program.product.displaytype = inputStream.ReadString();
+                        Program.product.screensize = inputStream.ReadString();
+                        Program.product.resolution = inputStream.ReadString();
+                        Program.product.CPU_Class = inputStream.ReadString();
+                        Program.product.CPU_brand = inputStream.ReadString();
+                        Program.product.CPU_type = inputStream.ReadString();
+                        Program.product.CPU_speed = inputStream.ReadString();
+                        Program.product.CPU_number = inputStream.ReadString();
+                        Program.product.condition = inputStream.ReadString();
+                        Program.product.OS = inputStream.ReadString();
+                        Program.product.platform = inputStream.ReadString();
+                        Program.product.HDD_size = inputStream.ReadString();
+                        Program.product.HDD_speed = inputStream.ReadString();
+                        Program.product.GPU_Type = inputStream.ReadString();
+                        Program.product.optical_drive = inputStream.ReadString();
+                        Program.product.Audio_type = inputStream.ReadString();
+                        Program.product.LAN = inputStream.ReadString();
+                        Program.product.WIFI = inputStream.ReadString();
+                        Program.product.width = inputStream.ReadString();
+                        Program.product.height = inputStream.ReadString();
+                        Program.product.depth = inputStream.ReadString();
+                        Program.product.weight = inputStream.ReadString();
+                        Program.product.moust_type = inputStream.ReadString();
+                        Program.product.power = inputStream.ReadString();
+                        Program.product.webcam = inputStream.ReadString();
+
+                        //cleanup
+                        inputStream.Close();
+                        inputStream.Dispose();
+                    }
+
+                    ProductInfoForm_Activated(sender, e);
+                }
+                catch (IOException exception)
+                {
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR: " + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException exception)
+                {
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR: " + exception.Message + "\n\nPlease select the binary file type.", "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void SaveBinaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // configure the file dialog
+            ProductSaveFileDialog.FileName = "Product.dat";
+            ProductSaveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            ProductSaveFileDialog.Filter = "Binary Files (*.dat)|*.dat| All Files (*.*)|*.*";
+
+            // open the file dialog
+            var result = ProductSaveFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                // open a stream to write
+                using (BinaryWriter outputString = new BinaryWriter(
+                    File.Open(ProductSaveFileDialog.FileName, FileMode.Create)))
+                {
+                    // write stuff to the file
+                    outputString.Write(Program.product.productID);
+                    outputString.Write(Program.product.cost);
+                    outputString.Write(Program.product.manufacturer);
+                    outputString.Write(Program.product.model);
+                    outputString.Write(Program.product.RAM_type);
+                    outputString.Write(Program.product.RAM_size);
+                    outputString.Write(Program.product.displaytype);
+                    outputString.Write(Program.product.screensize);
+                    outputString.Write(Program.product.resolution);
+                    outputString.Write(Program.product.CPU_Class);
+                    outputString.Write(Program.product.CPU_brand);
+                    outputString.Write(Program.product.CPU_type);
+                    outputString.Write(Program.product.CPU_speed);
+                    outputString.Write(Program.product.CPU_number);
+                    outputString.Write(Program.product.condition);
+                    outputString.Write(Program.product.OS);
+                    outputString.Write(Program.product.platform);
+                    outputString.Write(Program.product.HDD_size);
+                    outputString.Write(Program.product.HDD_speed);
+                    outputString.Write(Program.product.GPU_Type);
+                    outputString.Write(Program.product.optical_drive);
+                    outputString.Write(Program.product.Audio_type);
+                    outputString.Write(Program.product.LAN);
+                    outputString.Write(Program.product.WIFI);
+                    outputString.Write(Program.product.width);
+                    outputString.Write(Program.product.height);
+                    outputString.Write(Program.product.depth);
+                    outputString.Write(Program.product.weight);
+                    outputString.Write(Program.product.moust_type);
+                    outputString.Write(Program.product.power);
+                    outputString.Write(Program.product.webcam);
+
+                    // cleanup
+                    outputString.Close();
+                    outputString.Dispose();
+
+                    // give feedback to the user that the file has been saved
+                    // this is a "modal" form
+                    MessageBox.Show("Binary File Saved...", "Saving Binary File...",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
