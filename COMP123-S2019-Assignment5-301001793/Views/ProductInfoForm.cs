@@ -97,58 +97,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
         }
 
         private void ProductInfoForm_Activated(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    // open file stream to read
-            //    using (StreamReader inputStream = new StreamReader(
-            //        File.Open("Product.txt", FileMode.Open)))
-            //    {
-            //        // read stuff from the file into the Product object
-            //        Program.product.productID = short.Parse(inputStream.ReadLine());
-            //        Program.product.cost = decimal.Parse(inputStream.ReadLine());
-            //        Program.product.manufacturer = inputStream.ReadLine();
-            //        Program.product.model = inputStream.ReadLine();
-            //        Program.product.RAM_type = inputStream.ReadLine();
-            //        Program.product.RAM_size = inputStream.ReadLine();
-            //        Program.product.displaytype = inputStream.ReadLine();
-            //        Program.product.screensize = inputStream.ReadLine();
-            //        Program.product.resolution = inputStream.ReadLine();
-            //        Program.product.CPU_Class = inputStream.ReadLine();
-            //        Program.product.CPU_brand = inputStream.ReadLine();
-            //        Program.product.CPU_type = inputStream.ReadLine();
-            //        Program.product.CPU_speed = inputStream.ReadLine();
-            //        Program.product.CPU_number = inputStream.ReadLine();
-            //        Program.product.condition = inputStream.ReadLine();
-            //        Program.product.OS = inputStream.ReadLine();
-            //        Program.product.platform = inputStream.ReadLine();
-            //        Program.product.HDD_size = inputStream.ReadLine();
-            //        Program.product.HDD_speed = inputStream.ReadLine();
-            //        Program.product.GPU_Type = inputStream.ReadLine();
-            //        Program.product.optical_drive = inputStream.ReadLine();
-            //        Program.product.Audio_type = inputStream.ReadLine();
-            //        Program.product.LAN = inputStream.ReadLine();
-            //        Program.product.WIFI = inputStream.ReadLine();
-            //        Program.product.width = inputStream.ReadLine();
-            //        Program.product.height = inputStream.ReadLine();
-            //        Program.product.depth = inputStream.ReadLine();
-            //        Program.product.weight = inputStream.ReadLine();
-            //        Program.product.moust_type = inputStream.ReadLine();
-            //        Program.product.power = inputStream.ReadLine();
-            //        Program.product.webcam = inputStream.ReadLine();
-
-            //        //cleanup
-            //        inputStream.Close();
-            //        inputStream.Dispose();
-            //    }
-            //}
-            //catch (IOException exception)
-            //{
-            //    Debug.WriteLine("ERROR: " + exception.Message);
-
-            //    MessageBox.Show("ERROR" + exception.Message, "ERROR", 
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+        {           
             ProductIdDataLabel.Text = Program.product.productID.ToString();
             ConditionDataLabel.Text = Program.product.condition;
             CostDataLabel.Text = Program.product.cost.ToString();
@@ -165,6 +114,73 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             HDDDataLabel.Text = Program.product.HDD_size;
             GPUTypeDataLabel.Text = Program.product.GPU_Type;
             WebcamDataLabel.Text = Program.product.webcam;
+        }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            // configure the file dialog
+            ProductOpenFileDialog.FileName = "Product.txt";
+            ProductOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            ProductOpenFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+
+            // open the file dialog
+            var result = ProductOpenFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                try
+                {
+                    // open file stream to read
+                    using (StreamReader inputStream = new StreamReader(
+                        File.Open(ProductOpenFileDialog.FileName, FileMode.Open)))
+                    {
+                        // read stuff from the file into the Product object
+                        Program.product.productID = short.Parse(inputStream.ReadLine());
+                        Program.product.cost = decimal.Parse(inputStream.ReadLine());
+                        Program.product.manufacturer = inputStream.ReadLine();
+                        Program.product.model = inputStream.ReadLine();
+                        Program.product.RAM_type = inputStream.ReadLine();
+                        Program.product.RAM_size = inputStream.ReadLine();
+                        Program.product.displaytype = inputStream.ReadLine();
+                        Program.product.screensize = inputStream.ReadLine();
+                        Program.product.resolution = inputStream.ReadLine();
+                        Program.product.CPU_Class = inputStream.ReadLine();
+                        Program.product.CPU_brand = inputStream.ReadLine();
+                        Program.product.CPU_type = inputStream.ReadLine();
+                        Program.product.CPU_speed = inputStream.ReadLine();
+                        Program.product.CPU_number = inputStream.ReadLine();
+                        Program.product.condition = inputStream.ReadLine();
+                        Program.product.OS = inputStream.ReadLine();
+                        Program.product.platform = inputStream.ReadLine();
+                        Program.product.HDD_size = inputStream.ReadLine();
+                        Program.product.HDD_speed = inputStream.ReadLine();
+                        Program.product.GPU_Type = inputStream.ReadLine();
+                        Program.product.optical_drive = inputStream.ReadLine();
+                        Program.product.Audio_type = inputStream.ReadLine();
+                        Program.product.LAN = inputStream.ReadLine();
+                        Program.product.WIFI = inputStream.ReadLine();
+                        Program.product.width = inputStream.ReadLine();
+                        Program.product.height = inputStream.ReadLine();
+                        Program.product.depth = inputStream.ReadLine();
+                        Program.product.weight = inputStream.ReadLine();
+                        Program.product.moust_type = inputStream.ReadLine();
+                        Program.product.power = inputStream.ReadLine();
+                        Program.product.webcam = inputStream.ReadLine();
+
+                        //cleanup
+                        inputStream.Close();
+                        inputStream.Dispose();
+                    }
+
+                    ProductInfoForm_Activated(sender, e);
+                }
+                catch (IOException exception)
+                {
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR" + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }            
         }
     }
 }

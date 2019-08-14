@@ -26,6 +26,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
         private void LoadButton_Click(object sender, EventArgs e)
         {
             Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
+            Program.Forms[FormName.PRODUCT_INFO_FORM]
             this.Hide();
         }
 
