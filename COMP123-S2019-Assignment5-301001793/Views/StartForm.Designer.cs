@@ -1,4 +1,4 @@
-﻿namespace COMP123_S2019_Assignment5_301001793
+﻿namespace COMP123_S2019_Assignment5_301001793.Views
 {
     partial class StartForm
     {
@@ -37,10 +37,10 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(55, 248);
-            this.StartButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartButton.Location = new System.Drawing.Point(64, 222);
+            this.StartButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(180, 28);
+            this.StartButton.Size = new System.Drawing.Size(158, 35);
             this.StartButton.TabIndex = 0;
             this.StartButton.Text = "Start a new order";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -48,10 +48,10 @@
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(55, 284);
-            this.LoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoadButton.Location = new System.Drawing.Point(64, 267);
+            this.LoadButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(180, 28);
+            this.LoadButton.Size = new System.Drawing.Size(158, 35);
             this.LoadButton.TabIndex = 1;
             this.LoadButton.Text = "Load a saved order";
             this.LoadButton.UseVisualStyleBackColor = true;
@@ -59,10 +59,10 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(55, 320);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExitButton.Location = new System.Drawing.Point(64, 312);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(180, 28);
+            this.ExitButton.Size = new System.Drawing.Size(158, 35);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -70,16 +70,18 @@
             // 
             // StartPictureBox
             // 
-            this.StartPictureBox.Location = new System.Drawing.Point(13, 13);
-            this.StartPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartPictureBox.Image = global::COMP123_S2019_Assignment5_301001793.Properties.Resources.dollarcomputer;
+            this.StartPictureBox.Location = new System.Drawing.Point(13, 14);
+            this.StartPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StartPictureBox.Name = "StartPictureBox";
-            this.StartPictureBox.Size = new System.Drawing.Size(258, 227);
+            this.StartPictureBox.Size = new System.Drawing.Size(258, 198);
+            this.StartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.StartPictureBox.TabIndex = 3;
             this.StartPictureBox.TabStop = false;
             // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 361);
             this.ControlBox = false;
@@ -87,8 +89,8 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.StartButton);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dollar Computer";

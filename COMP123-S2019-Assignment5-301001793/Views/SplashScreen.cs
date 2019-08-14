@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COMP123_S2019_Assignment5_301001793
+namespace COMP123_S2019_Assignment5_301001793.Views
 {
     public partial class SplashScreen : Form
     {

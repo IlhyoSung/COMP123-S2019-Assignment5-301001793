@@ -1,4 +1,4 @@
-﻿namespace COMP123_S2019_Assignment5_301001793
+﻿namespace COMP123_S2019_Assignment5_301001793.Views
 {
     partial class SplashScreen
     {
@@ -38,7 +38,7 @@
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.WelcomeLabel.BackColor = System.Drawing.Color.White;
             this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.WelcomeLabel.Location = new System.Drawing.Point(18, 366);
             this.WelcomeLabel.Name = "WelcomeLabel";
@@ -53,9 +53,11 @@
             // 
             // LogoPictureBox
             // 
+            this.LogoPictureBox.Image = global::COMP123_S2019_Assignment5_301001793.Properties.Resources.logo;
             this.LogoPictureBox.Location = new System.Drawing.Point(12, 12);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(276, 351);
+            this.LogoPictureBox.Size = new System.Drawing.Size(274, 351);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPictureBox.TabIndex = 1;
             this.LogoPictureBox.TabStop = false;
             // 
@@ -63,12 +65,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(300, 400);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.WelcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
-            this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.SplashScreen_Load);
