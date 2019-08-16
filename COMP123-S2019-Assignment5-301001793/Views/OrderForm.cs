@@ -39,5 +39,41 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             ProductPrintForm.PrintAction = PrintAction.PrintToPreview;
             ProductPrintForm.Print();
         }
+
+        private void OrderForm_Activated(object sender, EventArgs e)
+        {
+            ConditionDataLabel.Text = Program.product.condition;
+            PlatformDataLabel.Text = Program.product.platform;
+            ManufacturerDataLabel.Text = Program.product.manufacturer;
+            ModelDataLabel.Text = Program.product.model;
+
+            SpecsDataLabel.Text = Program.product.screensize + "\n\n" +
+                Program.product.RAM_size + "\n\n" +
+                Program.product.CPU_brand + "\n\n" +
+                Program.product.CPU_type + "\n\n" +
+                Program.product.CPU_speed + "\n\n" +
+                Program.product.CPU_Class + "\n\n" +
+                Program.product.HDD_size + "\n\n" +
+                Program.product.GPU_Type + "\n\n" +
+                Program.product.webcam + "\n\n" +
+                Program.product.OS;
+                        
+            double taxRate = 0.13;
+            double salesTax = (double)Program.product.cost * taxRate;
+            double totalPrice = (double)Program.product.cost + salesTax;
+            PriceDataLabel.Text = "$ " + Math.Round(Program.product.cost,2).ToString();            
+            SalesTaxDataLabel.Text = "$ " + Math.Round(salesTax,2).ToString();
+            TotalPriceDataLabel.Text = "$ " + Math.Round(totalPrice,2).ToString();
+        }
+
+        private void FinishButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Thank you for your order.\n\nYour order will be processed in 7-10 business days.",
+                "Finish Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

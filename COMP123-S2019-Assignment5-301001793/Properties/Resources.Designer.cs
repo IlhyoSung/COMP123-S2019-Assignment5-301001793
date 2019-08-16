@@ -63,6 +63,16 @@ namespace COMP123_S2019_Assignment5_301001793.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computerHardwareImage {
+            get {
+                object obj = ResourceManager.GetObject("computerHardwareImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dollarcomputer {
             get {
                 object obj = ResourceManager.GetObject("dollarcomputer", resourceCulture);

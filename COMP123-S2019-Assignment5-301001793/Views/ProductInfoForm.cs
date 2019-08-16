@@ -114,6 +114,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             HDDDataLabel.Text = Program.product.HDD_size;
             GPUTypeDataLabel.Text = Program.product.GPU_Type;
             WebcamDataLabel.Text = Program.product.webcam;
+            NextButton.Enabled = true;
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)

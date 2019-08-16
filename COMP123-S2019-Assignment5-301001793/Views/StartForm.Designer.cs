@@ -32,6 +32,7 @@
             this.LoadButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.StartPictureBox = new System.Windows.Forms.PictureBox();
+            this.ProductOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.StartPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,10 @@
             this.StartPictureBox.TabIndex = 3;
             this.StartPictureBox.TabStop = false;
             // 
+            // ProductOpenFileDialog
+            // 
+            this.ProductOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -105,6 +110,7 @@
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.PictureBox StartPictureBox;
+        private System.Windows.Forms.OpenFileDialog ProductOpenFileDialog;
     }
 }
 

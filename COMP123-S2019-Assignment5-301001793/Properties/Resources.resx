@@ -124,4 +124,7 @@
   <data name="dollarcomputer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dollarcomputer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="computerHardwareImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computerHardwareImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
