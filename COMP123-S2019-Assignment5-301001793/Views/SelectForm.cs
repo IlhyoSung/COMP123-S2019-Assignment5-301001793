@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* Student Name: Ilhyo Sung
-     * Student ID: 301001793
-     * Description: This is SelectForm
-     */
+ * Student ID: 301001793
+ * Description: This is SelectForm
+ */
 
 namespace COMP123_S2019_Assignment5_301001793.Views
 {

@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* Student Name: Ilhyo Sung
-     * Student ID: 301001793
-     * Description: This is ProductInfoForm
-     */
+ * Student ID: 301001793
+ * Description: This is ProductInfoForm
+ */
 
 namespace COMP123_S2019_Assignment5_301001793.Views
 {
@@ -131,7 +131,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             // input data to labels
             ProductIdDataLabel.Text = Program.product.productID.ToString();
             ConditionDataLabel.Text = Program.product.condition;
-            CostDataLabel.Text = Program.product.cost.ToString();
+            CostDataLabel.Text = "$ " + Math.Round(Program.product.cost,2).ToString();
             PlatformDataLabel.Text = Program.product.platform;
             ManufacturerDataLabel.Text = Program.product.manufacturer;
             OSDataLabel.Text = Program.product.OS;
