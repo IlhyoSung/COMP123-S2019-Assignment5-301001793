@@ -6,6 +6,14 @@ namespace COMP123_S2019_Assignment5_301001793.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    /* Student Name: Ilhyo Sung
+     * Student ID: 301001793
+     * Description: This is class for enum of ProductField, Containing data
+     */
+
+    /// <summary>
+    /// This is the enum of ProductField
+    /// </summary
     public enum ProductField
     {
         PRODUCT_ID,
@@ -42,6 +50,9 @@ namespace COMP123_S2019_Assignment5_301001793.Models
         NUM_OF_FIELD
     }
 
+    /// <summary>
+    /// This is the class for containing Product data
+    /// </summary>
     public partial class Product
     {
         public short productID { get; set; }

@@ -10,6 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Student Name: Ilhyo Sung
+ * Student ID: 301001793
+ * Description: This is StartForm
+ */
+
 namespace COMP123_S2019_Assignment5_301001793.Views
 {
     public partial class StartForm : Form
@@ -19,12 +24,22 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is event handler for StartButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartButton_Click(object sender, EventArgs e)
         {
             Program.Forms[FormName.SELECT_FORM].Show();
             this.Hide();
         }
-        
+
+        /// <summary>
+        /// This is event handler for LoadButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadButton_Click(object sender, EventArgs e)
         {
             // configure the file dialog
@@ -80,6 +95,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
                         inputStream.Dispose();
                     }
 
+                    // show ProductInfoForm and hide StartForm
                     Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
                     this.Hide();
                 }
@@ -100,6 +116,11 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             }            
         }
 
+        /// <summary>
+        /// This is event handler for ExitButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

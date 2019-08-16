@@ -11,6 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Student Name: Ilhyo Sung
+     * Student ID: 301001793
+     * Description: This is SelectForm
+     */
+
 namespace COMP123_S2019_Assignment5_301001793.Views
 {
     public partial class SelectForm : Form
@@ -20,28 +25,35 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is event handler for NextButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
-        {
-            //var ProductList =
-            //    from product in this.
-            //    select product;
-
-            //foreach (var product in ProductList.ToList())
-            //{
-            //    Debug.WriteLine("ProductID: " + product.productID + " Model: " + product.model);
-            //}
-
+        {            
             Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This is event handler for CancelButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// This is event handler for SelectForm Load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
+            // load database and connect to local DataGridView
             using (var db = new DollarComputersContext())
             {
                 db.products.Load();
@@ -49,6 +61,11 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             }
         }
 
+        /// <summary>
+        /// This is event handler for ProductDataGridView SelectionChanged event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             // local scope aliases
@@ -58,12 +75,13 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             var cells = rows[rowIndex].Cells;
             
             string outputString = string.Empty;
-            //for (int index = 0; index < columnCount; index++)            
+
+            // show selection to YourSelectionTextBox
             outputString = cells[(int)ProductField.MANUFACTURER].Value.ToString() + " " + cells[(int)ProductField.MODEL].Value.ToString() 
                 + " Priced at: $" + cells[(int)ProductField.COST].Value.ToString();
-            
             YourSelectionTextBox.Text = outputString;
 
+            // assign selected data to data container
             Program.product.productID = short.Parse(cells[(int)ProductField.PRODUCT_ID].Value.ToString());
             Program.product.cost = decimal.Parse(cells[(int)ProductField.COST].Value.ToString());
             Program.product.manufacturer = cells[(int)ProductField.MANUFACTURER].Value.ToString();
@@ -97,12 +115,20 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             Program.product.webcam = cells[(int)ProductField.WEBCAM].Value.ToString();
         }
 
+        /// <summary>
+        /// This is event handler for ProductDataGridView CellClick event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // make entire row selected
             var rowIndex = ProductDataGridView.CurrentCell.RowIndex;
             var rows = ProductDataGridView.Rows;
 
             rows[rowIndex].Selected = true;
+
+            // make NextButton enable
             NextButton.Enabled = true;
         }
     }

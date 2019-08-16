@@ -6,6 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Student Name: Ilhyo Sung
+ * Student ID: 301001793
+ * Description: This is Main Program class
+ */
+
 namespace COMP123_S2019_Assignment5_301001793
 {
     static class Program
@@ -31,6 +36,7 @@ namespace COMP123_S2019_Assignment5_301001793
             Forms.Add(FormName.ORDER_FORM, new OrderForm());
             Forms.Add(FormName.ABOUT_FORM, new AboutForm());
 
+            // This is data container
             product = new Product();
 
             Application.Run(Forms[FormName.SPLASH_SCREEN]);

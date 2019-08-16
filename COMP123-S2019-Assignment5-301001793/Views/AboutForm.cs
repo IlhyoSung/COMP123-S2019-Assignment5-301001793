@@ -7,8 +7,13 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Student Name: Ilhyo Sung
+     * Student ID: 301001793
+     * Description: This is AboutForm
+     */
+
 namespace COMP123_S2019_Assignment5_301001793.Views
-{
+{    
     public partial class AboutForm : Form
     {
         public AboutForm()

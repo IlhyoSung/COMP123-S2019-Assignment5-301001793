@@ -10,6 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Student Name: Ilhyo Sung
+     * Student ID: 301001793
+     * Description: This is ProductInfoForm
+     */
+
 namespace COMP123_S2019_Assignment5_301001793.Views
 {
     public partial class ProductInfoForm : Form
@@ -19,23 +24,43 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is event handler for NextButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.Forms[FormName.ORDER_FORM].Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This is event handler for NextButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// This is event handler for SelectButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectButton_Click(object sender, EventArgs e)
         {
             Program.Forms[FormName.SELECT_FORM].Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This is event handler for saveToolStripMenuItem Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the file dialog
@@ -96,8 +121,14 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             }           
         }
 
+        /// <summary>
+        /// This is event handler for ProductInfoForm Activated event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoForm_Activated(object sender, EventArgs e)
-        {           
+        {
+            // input data to labels
             ProductIdDataLabel.Text = Program.product.productID.ToString();
             ConditionDataLabel.Text = Program.product.condition;
             CostDataLabel.Text = Program.product.cost.ToString();
@@ -117,6 +148,11 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             NextButton.Enabled = true;
         }
 
+        /// <summary>
+        /// This is event handler for OpenToolStripMenuItem Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {            
             // configure the file dialog
@@ -167,15 +203,15 @@ namespace COMP123_S2019_Assignment5_301001793.Views
                         Program.product.power = inputStream.ReadLine();
                         Program.product.webcam = inputStream.ReadLine();
 
-                        //cleanup
+                        // cleanup
                         inputStream.Close();
                         inputStream.Dispose();
                     }
-
+                    // for inputting data to labels
                     ProductInfoForm_Activated(sender, e);
                 }
                 catch (IOException exception)
-                {
+                {                    
                     Debug.WriteLine("ERROR: " + exception.Message);
 
                     MessageBox.Show("ERROR: " + exception.Message, "ERROR",
@@ -191,6 +227,11 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             }            
         }
 
+        /// <summary>
+        /// This is event handler for OpenBinaryToolStripMenuItem Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenBinaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the file dialog
@@ -245,7 +286,7 @@ namespace COMP123_S2019_Assignment5_301001793.Views
                         inputStream.Close();
                         inputStream.Dispose();
                     }
-
+                    // for inputting data to labels
                     ProductInfoForm_Activated(sender, e);
                 }
                 catch (IOException exception)
@@ -265,6 +306,11 @@ namespace COMP123_S2019_Assignment5_301001793.Views
             }
         }
 
+        /// <summary>
+        /// This is event handler for SaveBinaryToolStripMenuItem Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveBinaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the file dialog
